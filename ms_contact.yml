@@ -1,0 +1,15 @@
+server:
+  port: 8082
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/healthcare_patients?createDatabaseIfNotExist=true
+    username: root
+    password: motdepasse123*
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+      defer-datasource-initialization: true 
+    show-sql: true
+
