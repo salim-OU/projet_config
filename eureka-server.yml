@@ -1,1 +1,17 @@
+server:
+  port: 8070  # Port sur lequel le serveur Eureka écoute
 
+eureka:
+  instance:
+    hostname: localhost  # Utiliser 'localhost' pour une machine locale, ou l'IP/nom d'hôte dans un environnement distribué
+  client:
+    fetchRegistry: false  # Le serveur Eureka ne récupère pas de registre d'autres services
+    registerWithEureka: false  # Ce serveur Eureka ne s'enregistre pas dans un autre registre Eureka
+  server:
+    # Si vous souhaitez personnaliser l'URL d'Eureka, vous pouvez ajouter un contextPath
+    contextPath: /eureka  # Le chemin d'accès à l'interface d'Eureka (par défaut /eureka)
+    # Pour ajouter des configurations de sécurité, décommentez et ajustez ces lignes selon vos besoins
+    # security:
+    #   user:
+    #     name: admin  # Utilisateur pour l'authentification
+    #     password: password  # Mot de passe pour l'authentification
