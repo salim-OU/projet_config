@@ -1,1 +1,23 @@
+server:
+  port: 8087
 
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/CRM_user?createDatabaseIfNotExist=true
+    username: root
+    password: motdepasse123*
+  jpa:
+    hibernate:
+      ddl-auto: update
+      defer-datasource-initialization: true 
+    show-sql: true
+
+healthcare:
+  app:
+    jwtSecret: yourVerySecureJwtSecretKeyShouldBeLongAndHardToGuess
+    jwtExpirationMs: 86400000  # 24 heures
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
