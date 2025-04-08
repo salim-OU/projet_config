@@ -15,7 +15,7 @@ spring:
         - id: ms_contact
           uri: http://localhost:8200
           predicates:
-            - Path=/contact/**
+            - Path=/contacts/**
 
     discovery:
       locator:
