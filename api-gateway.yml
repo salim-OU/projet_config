@@ -8,12 +8,12 @@ spring:
     gateway:
       routes:
         - id: ms_user
-          uri: http://localhost:8100
+          uri: http://localhost:8200
           predicates:
             - Path=/user/**
 
         - id: ms_contact
-          uri: http://localhost:8200
+          uri: http://localhost:8100
           predicates:
             - Path=/contacts/**
 
