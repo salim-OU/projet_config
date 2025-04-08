@@ -1,11 +1,29 @@
 server:
   port: 8080
+
 spring:
   application:
     name: api-gateway
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
+      routes:
+        - id: ms_user
+          uri: http://localhost:8100
+          predicates:
+            - Path=/user/**
+
+        - id: ms_contact
+          uri: http://localhost:8200
+          predicates:
+            - Path=/contact/**
+
+    discovery:
+      locator:
+        enabled: true  # Pour activer la découverte via Eureka (optionnel)
+        lower-case-service-id: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+
