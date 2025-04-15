@@ -10,7 +10,7 @@ spring:
         - id: ms_user
           uri: http://localhost:8200
           predicates:
-            - Path=/api/user/**
+            - Path=/api/users/**
 
         - id: ms_contact
           uri: http://localhost:8100
