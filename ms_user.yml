@@ -1,38 +1,5 @@
-server:
-  port: 8200
-spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/ms_user_crm
-    username: postgres
-    password: motdepasse123
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        jdbc:
-          defer-datasource-initialization: true
-    show-sql: true
-  security:
-    filter:
-      order: 10
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8070/eureka/
-  instance:
-    preferIpAddress: true
-
-# JWT Configuration
-app:
-  jwtSecret: mySecretKey123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
-  jwtExpirationMs: 3600000
-  jwtRefreshExpirationMs: 86400000
-
 # server:
 #   port: 8200
-
 # spring:
 #   datasource:
 #     url: jdbc:postgresql://localhost:5432/ms_user_crm
@@ -42,12 +9,49 @@ app:
 #   jpa:
 #     hibernate:
 #       ddl-auto: update
-#       defer-datasource-initialization: true 
+#     properties:
+#       hibernate:
+#         jdbc:
+#           defer-datasource-initialization: true
 #     show-sql: true
-
+#   security:
+#     filter:
+#       order: 10
 # eureka:
 #   client:
 #     serviceUrl:
 #       defaultZone: http://localhost:8070/eureka/
 #   instance:
 #     preferIpAddress: true
+
+# # JWT Configuration
+# app:
+#   jwtSecret: mySecretKey123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+#   jwtExpirationMs: 3600000
+#   jwtRefreshExpirationMs: 86400000
+
+server:
+  port: 8200
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ms_user_crm
+    username: postgres
+    password: motdepasse123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+      defer-datasource-initialization: true 
+    show-sql: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+  instance:
+    preferIpAddress: true
+app:
+  jwtSecret: mySecretKey123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+  jwtExpirationMs: 3600000
+  jwtRefreshExpirationMs: 86400000
