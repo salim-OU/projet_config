@@ -1,6 +1,5 @@
 server:
   port: 8200
-
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/ms_user_crm
@@ -12,10 +11,43 @@ spring:
       ddl-auto: update
       defer-datasource-initialization: true 
     show-sql: true
-
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8070/eureka/
   instance:
     preferIpAddress: true
+
+# JWT Configuration
+app:
+  jwtSecret: mySecretKey123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+  jwtExpirationMs: 3600000          # 1 heure en millisecondes
+  jwtRefreshExpirationMs: 86400000  # 24 heures en millisecondes
+
+# Configuration de Spring Security
+spring:
+  security:
+    filter:
+      order: 10
+
+# server:
+#   port: 8200
+
+# spring:
+#   datasource:
+#     url: jdbc:postgresql://localhost:5432/ms_user_crm
+#     username: postgres
+#     password: motdepasse123
+#     driver-class-name: org.postgresql.Driver
+#   jpa:
+#     hibernate:
+#       ddl-auto: update
+#       defer-datasource-initialization: true 
+#     show-sql: true
+
+# eureka:
+#   client:
+#     serviceUrl:
+#       defaultZone: http://localhost:8070/eureka/
+#   instance:
+#     preferIpAddress: true
