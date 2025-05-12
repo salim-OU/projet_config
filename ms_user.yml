@@ -9,8 +9,14 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-      defer-datasource-initialization: true 
+    properties:
+      hibernate:
+        jdbc:
+          defer-datasource-initialization: true
     show-sql: true
+  security:
+    filter:
+      order: 10
 eureka:
   client:
     serviceUrl:
@@ -21,14 +27,8 @@ eureka:
 # JWT Configuration
 app:
   jwtSecret: mySecretKey123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
-  jwtExpirationMs: 3600000          # 1 heure en millisecondes
-  jwtRefreshExpirationMs: 86400000  # 24 heures en millisecondes
-
-# Configuration de Spring Security
-spring:
-  security:
-    filter:
-      order: 10
+  jwtExpirationMs: 3600000
+  jwtRefreshExpirationMs: 86400000
 
 # server:
 #   port: 8200
